@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About — Xperience</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Xperience</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav aria-label="Primary" id="primary-nav">
+      <ul>
+        <li><a href="portfolio.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro-split">
+    <div class="wrap grid">
+      <div class="portrait"><span>[Portrait Photo]</span></div>
+      <div>
+        <div class="eyebrow">About</div>
+        <h1>I'm Chris — I design web experiences for clients who expect more.</h1>
+        <p>Before I was a designer, I ran operations. I managed logistics, led customer-facing teams, and learned — the hard way — what actually makes a business work day to day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <p>That background changes how I design. I'm not just solving for how something looks. I'm solving for how it holds up under real use: real customers, real deadlines, real stakes. It's why clients come to me for polish <em>and</em> trust me to think past the pixels.</p>
+      <p class="brand-line"><strong>Xperience</strong> exists for people who've outgrown template sites and quick-turnaround shops — who want something considered, and someone who'll stay close after launch, not disappear the day it goes live.</p>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2>How I Work</h2>
+      <div class="grid">
+        <div>
+          <div class="num">01</div>
+          <h3>Discover</h3>
+          <p>I start by understanding your business, not just your brief.</p>
+        </div>
+        <div>
+          <div class="num">02</div>
+          <h3>Design</h3>
+          <p>Every screen is built custom, with intention behind each choice.</p>
+        </div>
+        <div>
+          <div class="num">03</div>
+          <h3>Build</h3>
+          <p>Engineered carefully, not rushed to hit a deadline.</p>
+        </div>
+        <div>
+          <div class="num">04</div>
+          <h3>Refine</h3>
+          <p>Ongoing support after launch, because good design keeps evolving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-close">
+    <div class="wrap">
+      <h2>Let's talk about your project.</h2>
+      <a class="btn btn-inverse" href="contact.html">Let's Talk About Your Project</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="year"></span> Xperience</div>
+    <div>[email@xperience.com] &middot; [City, State]</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

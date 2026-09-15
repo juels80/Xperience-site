@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio — Xperience</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Xperience</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav aria-label="Primary" id="primary-nav">
+      <ul>
+        <li><a href="portfolio.html" aria-current="page">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-intro">
+    <div class="wrap">
+      <div class="eyebrow">Portfolio</div>
+      <h1>A selection of concept and client work.</h1>
+      <p>Each project approached the same way: understand the business first, design second.</p>
+    </div>
+  </section>
+
+  <section class="cases">
+    <div class="wrap">
+
+      <div class="case">
+        <div class="panel p1"><span>Automotive</span></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px;">Concept Project &middot; Automotive</div>
+          <h2>Range Rover Evoque</h2>
+          <h3>The Challenge</h3>
+          <p>Automotive brands often default to generic template layouts that undersell a vehicle's identity. The Evoque needed a digital presence as confident and distinct as the car itself.</p>
+          <h3>The Approach</h3>
+          <p>Built a dark, crimson-accented interface that mirrors the vehicle's aggressive-luxury positioning — full-bleed gallery imagery, minimal chrome, motion used sparingly to keep focus on the product.</p>
+          <h3>The Outcome</h3>
+          <p>A cohesive, brand-true digital experience with a gallery and features architecture ready to extend across additional vehicle lines.</p>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="panel p2"><span>Hospitality</span></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px;">Concept Project &middot; Hospitality / Travel</div>
+          <h2>Private Transport App</h2>
+          <h3>The Challenge</h3>
+          <p>High-end transportation clients expect an app experience as seamless and understated as the service itself — no friction, no visual noise.</p>
+          <h3>The Approach</h3>
+          <p>Designed a clean, auto-layout-driven Figma system prioritizing one-handed booking flows and restrained visual hierarchy, so the interface disappears and the service takes center stage.</p>
+          <h3>The Outcome</h3>
+          <p>A scalable component system ready to hand off for development, built to feel effortless across booking, tracking, and account flows.</p>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="panel p3"><span>Healthcare</span></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px;">Concept Project &middot; Healthcare</div>
+          <h2>Appointment Booking Redesign</h2>
+          <h3>The Challenge</h3>
+          <p>The existing booking flow buried key actions behind unnecessary steps, causing drop-off before patients could confirm an appointment.</p>
+          <h3>The Approach</h3>
+          <p>Mapped the full before/after user flow, cutting steps and clarifying decision points, then redesigned the interface around a simplified path to confirmation.</p>
+          <h3>The Outcome</h3>
+          <p>A measurably shorter booking flow with clearer decision points at every step — a case study in systems thinking as much as visual design.</p>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="panel p4"><span>Real Estate</span></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px;">Concept Project &middot; Real Estate</div>
+          <h2>Estate Listings Platform</h2>
+          <h3>The Challenge</h3>
+          <p>Luxury real estate listings are frequently over-designed with clutter that competes with the properties themselves, undermining the sense of exclusivity buyers expect.</p>
+          <h3>The Approach</h3>
+          <p>Designed a minimal listings interface — large-format photography, restrained typography, and a quiet inquiry flow — letting each property carry its own presence without competing UI elements.</p>
+          <h3>The Outcome</h3>
+          <p>A listings framework built to feel like a private showing rather than a marketplace, reinforcing exclusivity at every touchpoint.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-close">
+    <div class="wrap">
+      <h2>Ready for something more deliberate?</h2>
+      <a class="btn btn-inverse" href="contact.html">Book an Intro Call</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="year"></span> Xperience</div>
+    <div>[email@xperience.com] &middot; [City, State]</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

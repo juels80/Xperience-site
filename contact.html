@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact — Xperience</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Xperience</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav aria-label="Primary" id="primary-nav">
+      <ul>
+        <li><a href="portfolio.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="contact-grid wrap">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h1>Let's talk about your project.</h1>
+      <p class="intro-text">Every project starts with a conversation, not a form. Tell us a bit about what you have in mind, and we'll follow up to schedule an intro call.</p>
+      <div class="alt">
+        Prefer to talk first?
+        <a href="#">Book an Intro Call</a>
+      </div>
+    </div>
+
+    <form id="contact-form">
+      <div class="row2">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label for="company">Company (optional)</label>
+          <input id="company" type="text" name="company">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="type">Project Type</label>
+          <select id="type" name="type">
+            <option>New site</option>
+            <option>Redesign</option>
+            <option>Ongoing care</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget">Estimated Budget</label>
+          <select id="budget" name="budget">
+            <option>$9K&ndash;15K</option>
+            <option>$15K&ndash;25K</option>
+            <option>$25K+</option>
+            <option>Let's discuss</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="timeline">Timeline</label>
+        <input id="timeline" type="text" name="timeline">
+      </div>
+      <div class="field">
+        <label for="details">Tell us about your project</label>
+        <textarea id="details" name="details" required></textarea>
+      </div>
+      <button class="submit" type="submit">Send Inquiry</button>
+      <p id="form-status" class="form-status" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="year"></span> Xperience</div>
+    <div>[email@xperience.com] &middot; [City, State]</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
