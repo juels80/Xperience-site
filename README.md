@@ -31,8 +31,8 @@ npx serve .
 
 - [ ] Replace bracketed placeholders (client quote, testimonial name,
       footer email/address) with real content
-- [ ] Swap the gradient portfolio panels for real photography (see
-      image direction notes from the design plan)
+- [ ] Replace the Unsplash demo photography and Pexels hero video with
+      licensed client or studio media before launch
 - [ ] Wire the contact form to a real backend — it currently just shows
       a demo success message. Options: [Formspree](https://formspree.io),
       Netlify Forms, or a custom backend.
@@ -45,3 +45,10 @@ npx serve .
 - Colors: `#f6f4f0` (ground), `#1a1a18` (ink), `#8a6d3b` (accent)
 - Type: Georgia (headlines) / Helvetica Neue (body, labels)
 - Tagline: "Precision. Presence. Xperience."
+
+## Media direction
+
+The home hero uses a muted looping studio-work video with a photographic
+poster fallback. Portfolio panels and the About portrait use responsive
+subject-specific photography so automotive, hospitality, healthcare, and
+real-estate work each has a distinct visual cue.

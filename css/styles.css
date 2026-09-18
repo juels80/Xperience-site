@@ -84,7 +84,10 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 }
 
 /* ---------- Hero (home) ---------- */
-.hero{ padding-block:140px 120px; text-align:center; }
+.hero{ min-height:620px; padding-block:140px 120px; text-align:center; display:flex; align-items:center; position:relative; isolation:isolate; overflow:hidden; background:#25231f; color:var(--ground); }
+.hero-media{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; opacity:0.72; }
+.hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(20,19,16,0.38),rgba(20,19,16,0.7)); z-index:-1; }
+.hero .wrap{ width:100%; }
 .hero h1{
   font-size:clamp(2.4rem, 5vw, 4rem);
   font-weight:400; letter-spacing:0.01em;
@@ -92,9 +95,11 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 }
 .hero p{
   font-family:'Helvetica Neue',Arial,sans-serif;
-  font-size:1.05rem; color:#4a4a45; margin-top:26px;
+  font-size:1.05rem; color:#ebe6dc; margin-top:26px;
 }
 .hero .ctas{ margin-top:48px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.hero .eyebrow{ color:#d4b77e; }
+.hero .btn-secondary{ color:var(--ground); border-color:var(--ground); }
 
 /* ---------- Page intro (non-home pages) ---------- */
 .page-intro{ padding-block:110px 70px; text-align:center; }
@@ -127,24 +132,29 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 .work .grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:40px; }
 
 .card{ display:block; text-decoration:none; color:inherit; }
-.card .panel{ aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; }
+.card .panel{ aspect-ratio:4/3; display:flex; align-items:flex-end; justify-content:flex-start; padding:24px; position:relative; overflow:hidden; background-size:cover; background-position:center; }
+.project-image{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.card .panel::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 42%,rgba(20,18,15,0.72)); }
 .card .panel span{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#5a5548; }
+.card .panel span{ position:relative; z-index:1; color:#f6f4f0; }
 .card .meta{ padding-top:20px; }
 .card .cat{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
 .card h3{ font-size:1.2rem; font-weight:400; }
 
 /* portfolio panel tints — swap for real photography */
-.p1{ background:linear-gradient(135deg,#2b2320,#4a3a30); }
-.p1 span{ color:#c9b8a8; }
-.p2{ background:linear-gradient(135deg,#d8d2c4,#b9b09a); }
-.p3{ background:linear-gradient(135deg,#e2e6e2,#bfc9c2); }
-.p4{ background:linear-gradient(135deg,#ded6c8,#a89c84); }
+.p1{ background-color:#2b2320; }
+.p2{ background-color:#d8d2c4; }
+.p3{ background-color:#e2e6e2; }
+.p4{ background-color:#ded6c8; }
 
 /* ---------- Full case studies (portfolio page) ---------- */
 .cases{ padding-block:60px 120px; }
 .case{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding-block:70px; border-bottom:1px solid var(--line); }
 .case:last-child{ border-bottom:none; }
 .case:nth-child(even) .panel{ order:2; }
+.case .panel{ aspect-ratio:4/3; position:relative; overflow:hidden; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:24px; }
+.case .panel::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 42%,rgba(20,18,15,0.72)); }
+.case .panel span{ position:relative; z-index:1; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#f6f4f0; }
 .case h2{ font-size:1.6rem; font-weight:400; margin-bottom:20px; }
 .case h3{
   font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.72rem; letter-spacing:0.1em;
@@ -155,8 +165,8 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 /* ---------- About page ---------- */
 .intro-split{ padding-block:110px 80px; }
 .intro-split .grid{ display:grid; grid-template-columns:1fr 1.3fr; gap:64px; align-items:center; }
-.portrait{ aspect-ratio:4/5; background:linear-gradient(160deg,#d8d2c4,#b9b09a); display:flex; align-items:center; justify-content:center; }
-.portrait span{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#5a5548; }
+.portrait{ aspect-ratio:4/5; background-image:linear-gradient(180deg,rgba(20,18,15,0.02),rgba(20,18,15,0.42)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85'); background-size:cover; background-position:center; display:flex; align-items:flex-end; justify-content:flex-start; padding:22px; }
+.portrait span{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#f6f4f0; }
 .intro-split h1{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); font-weight:400; margin-bottom:24px; }
 .intro-split p{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:1rem; color:#4a4a45; margin-bottom:18px; max-width:52ch; }
 
@@ -240,7 +250,7 @@ footer .wrap{
 @media (max-width:720px){
   .pillars .grid{ grid-template-columns:1fr; gap:48px; }
   .work .grid{ grid-template-columns:1fr; }
-  .hero{ padding-block:90px 80px; }
+  .hero{ min-height:560px; padding-block:90px 80px; }
   .intro-split .grid{ grid-template-columns:1fr; }
   .how .grid{ grid-template-columns:1fr 1fr; }
   .tiers .grid{ grid-template-columns:1fr; }
