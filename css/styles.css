@@ -3,6 +3,8 @@
    ========================================================================== */
 
 :root{
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Manrope", system-ui, sans-serif;
   --ink:#1a1a18;
   --ground:#f6f4f0;
   --ground-2:#eeeae3;
@@ -184,25 +186,30 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 /* ---------- Services / Pricing ---------- */
 .tiers{ padding-block:60px 100px; }
 .tiers .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); }
-.tier{ padding:48px 36px; border-right:1px solid var(--line); }
+.tier{ padding:48px 36px; border-right:1px solid var(--line); display:flex; flex-direction:column; }
 .tier:last-child{ border-right:none; }
 .tier.featured{ background:var(--ink); color:var(--ground); }
 .tier .name{ font-size:1.4rem; font-weight:400; margin-bottom:10px; }
 .tier .tagline{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; color:#6b6b64; margin-bottom:28px; min-height:44px; }
 .tier.featured .tagline{ color:#c9c4b8; }
 .tier .price{ font-size:2.1rem; font-weight:400; margin-bottom:6px; }
-.tier .price-note{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; color:#6b6b64; margin-bottom:32px; font-style:italic; }
-.tier.featured .price-note{ color:#c9c4b8; }
-.tier ul{ list-style:none; margin-bottom:36px; }
+.tier .optional{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.82rem; color:#6b6b64; margin-bottom:28px; font-style:italic; }
+.tier.featured .optional{ color:#c9c4b8; }
+.tier ul{ list-style:none; margin-bottom:36px; flex:1; }
 .tier li{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.88rem; padding-block:9px; border-top:1px solid var(--line); }
 .tier.featured li{ border-top:1px solid #3a3a36; }
 .tier li:last-child{ border-bottom:1px solid var(--line); }
 .tier.featured li:last-child{ border-bottom:1px solid #3a3a36; }
-.tier .btn{ font-size:0.78rem; padding:14px 0; display:block; text-align:center; width:100%; }
+.tier .btn{ font-size:0.78rem; padding:14px 0; display:block; text-align:center; width:100%; margin-top:auto; }
 .tier.featured .btn{ border-color:var(--ground); }
 
-.addons{ padding-block:70px; border-top:1px solid var(--line); text-align:center; }
-.addons p{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; color:#4a4a45; font-style:italic; max-width:60ch; margin-inline:auto; }
+.ai{ padding-block:80px; border-top:1px solid var(--line); }
+.ai h2{ font-size:1.8rem; font-weight:400; text-align:center; margin-bottom:48px; }
+.ai-grid{ display:grid; grid-template-columns:repeat(2,1fr); column-gap:64px; }
+.ai-grid>div{ padding-block:26px; border-top:1px solid var(--line); }
+.ai h3{ font-size:1.25rem; font-weight:400; margin-bottom:10px; }
+.ai p{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.92rem; color:#4a4a45; margin-bottom:12px; max-width:36rem; }
+.ai .where{ color:var(--accent); font-weight:600; margin-bottom:0; }
 
 /* ---------- Closing CTA band ---------- */
 .cta-close{ padding-block:110px; text-align:center; background:var(--ink); color:var(--ground); }
@@ -255,6 +262,7 @@ footer .wrap{
   .how .grid{ grid-template-columns:1fr 1fr; }
   .tiers .grid{ grid-template-columns:1fr; }
   .tier{ border-right:none; border-bottom:1px solid var(--line); }
+  .ai-grid{ grid-template-columns:1fr; }
   .case{ grid-template-columns:1fr; }
   .case:nth-child(even) .panel{ order:0; }
   .contact-grid{ grid-template-columns:1fr; }
