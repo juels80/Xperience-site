@@ -116,12 +116,21 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 .pillars p{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.92rem; color:#4a4a45; }
 
 /* ---------- Proof / testimonial ---------- */
-.proof{ padding-block:120px; text-align:center; }
-.proof blockquote{ font-size:1.6rem; font-weight:400; max-width:760px; margin:0 auto; font-style:italic; color:#2b2b28; }
+.proof{ padding-block:110px 120px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.25), rgba(236,232,224,0.9)); border-block:1px solid var(--line); }
+.proof .wrap{ max-width:920px; }
+.proof .eyebrow{ margin-bottom:18px; color:var(--accent); }
+.proof blockquote{
+  position:relative; font-family:Georgia,'Times New Roman',serif; font-size:clamp(2rem, 3vw, 3.1rem);
+  line-height:1.16; font-weight:400; max-width:760px; margin:0 auto; color:#201f1d; letter-spacing:-0.04em;
+}
+.proof blockquote::before{
+  content:"“"; display:block; font-family:'Helvetica Neue',Arial,sans-serif; font-size:4rem; line-height:0.8; color:var(--accent); margin-bottom:14px;
+}
 .proof cite{
   display:block; font-family:'Helvetica Neue',Arial,sans-serif; font-style:normal;
-  font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-top:26px;
+  font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-top:24px;
 }
+.proof cite::before{ content:"— "; }
 
 /* ---------- Work / portfolio grid (home teaser) ---------- */
 .work{ padding-block:120px; border-top:1px solid var(--line); }
@@ -193,6 +202,8 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 .tier .tagline{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; color:#6b6b64; margin-bottom:28px; min-height:44px; }
 .tier.featured .tagline{ color:#c9c4b8; }
 .tier .price{ font-size:2.1rem; font-weight:400; margin-bottom:6px; }
+.tier .price-note{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.75rem; color:#6b6b64; margin-bottom:32px; font-style:italic; }
+.tier.featured .price-note{ color:#c9c4b8; }
 .tier .optional{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.82rem; color:#6b6b64; margin-bottom:28px; font-style:italic; }
 .tier.featured .optional{ color:#c9c4b8; }
 .tier ul{ list-style:none; margin-bottom:36px; flex:1; }
@@ -202,6 +213,9 @@ nav a[aria-current="page"]{ border-bottom:1px solid var(--accent); padding-botto
 .tier.featured li:last-child{ border-bottom:1px solid #3a3a36; }
 .tier .btn{ font-size:0.78rem; padding:14px 0; display:block; text-align:center; width:100%; margin-top:auto; }
 .tier.featured .btn{ border-color:var(--ground); }
+
+.addons{ padding-block:70px; border-top:1px solid var(--line); text-align:center; }
+.addons p{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; color:#4a4a45; font-style:italic; max-width:60ch; margin-inline:auto; }
 
 .ai{ padding-block:80px; border-top:1px solid var(--line); }
 .ai h2{ font-size:1.8rem; font-weight:400; text-align:center; margin-bottom:48px; }
