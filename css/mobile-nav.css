@@ -58,28 +58,29 @@
   display: flex; flex-direction: column;
   padding: calc(18px + env(safe-area-inset-top, 0px)) 20px calc(28px + env(safe-area-inset-bottom, 0px));
   background: var(--xp-dark); color: var(--xp-dark-fg);
+  overflow-y: auto; overscroll-behavior: contain;
   transform: translateX(100%); opacity: 0; visibility: hidden;
   transition:
     transform var(--xp-dur) var(--xp-ease),
     opacity var(--xp-dur) ease,
     visibility 0s linear var(--xp-dur);
 }
-.xp-panel-head { display: flex; justify-content: flex-end; margin-bottom: 36px; }
+.xp-panel-head { display: flex; justify-content: flex-end; margin-bottom: clamp(16px, 4vh, 36px); }
 .xp-label {
   font: 11px/1 var(--xp-sans); letter-spacing: .2em;
   text-transform: uppercase; color: var(--xp-tan); margin-bottom: 10px;
 }
 .xp-panel ul { list-style: none; margin: 0; padding: 0; }
 .xp-panel nav a {
-  display: block; padding: 14px 0;
+  display: block; padding: clamp(10px, 1.8vh, 14px) 0;
   border-bottom: 1px solid var(--xp-dark-rule);
-  font-family: var(--xp-serif); font-size: 24px;
+  font-family: var(--xp-serif); font-size: clamp(20px, 3.4vh, 24px);
   color: var(--xp-dark-fg); text-decoration: none;
   transition: color .2s;
 }
 .xp-panel nav a:hover,
 .xp-panel nav a[aria-current="page"] { color: var(--xp-tan); }
-.xp-panel-foot { margin-top: auto; display: grid; gap: 14px; }
+.xp-panel-foot { margin-top: auto; padding-top: 24px; display: grid; gap: 14px; }
 .xp-cta {
   display: block; text-align: center; padding: 15px 8px;
   background: var(--xp-paper); color: var(--xp-ink); text-decoration: none;
@@ -113,7 +114,7 @@ body.xp-nav-open { overflow: hidden; }
   .xp-wordmark { font-size: 20px; }
   .xp-menu-btn { font-size: 12px; }
   .xp-panel { padding: 32px 56px 48px; }
-  .xp-panel-head { margin-bottom: 64px; }
-  .xp-panel nav a { font-size: 36px; padding: 20px 0; }
+  .xp-panel-head { margin-bottom: clamp(24px, 6vh, 64px); }
+  .xp-panel nav a { font-size: clamp(24px, 4.4vh, 36px); padding: clamp(12px, 2.2vh, 20px) 0; }
   .xp-cta { padding: 18px 12px; font-size: 12px; }
 }
