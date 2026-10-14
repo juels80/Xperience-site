@@ -1,0 +1,119 @@
+/* Xperience — slide-in menu
+   Mobile: panel 60% wide. Desktop (900px+): 40% wide, max 520px.
+   Slide + fade over --xp-dur, 35% dark overlay behind the panel. */
+
+:root {
+  --xp-paper: #f3f1ec;
+  --xp-ink: #1c1b19;
+  --xp-rule: #dcd8cf;
+  --xp-tan: #a3885a;
+  --xp-link: #5b7fae;
+  --xp-dark: #1f1e1c;
+  --xp-dark-fg: #f3f1ec;
+  --xp-dark-muted: #9b968c;
+  --xp-dark-rule: #34322e;
+  --xp-scrim: rgba(0, 0, 0, .35);
+  --xp-serif: Georgia, "Times New Roman", serif;
+  --xp-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --xp-ease: cubic-bezier(.32, .72, 0, 1);
+  --xp-dur: .45s;
+  --xp-width: 60%;
+}
+
+/* Header */
+.xp-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 16px;
+  background: var(--xp-paper);
+  border-bottom: 1px solid var(--xp-rule);
+}
+.xp-wordmark {
+  font-family: var(--xp-serif); font-size: 17px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--xp-ink); text-decoration: none;
+}
+.xp-menu-btn,
+.xp-close-btn {
+  border: 0; background: none; cursor: pointer;
+  padding: 10px 0 10px 12px;
+  font: 600 11px/1 var(--xp-sans);
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.xp-menu-btn { color: var(--xp-link); }
+.xp-close-btn { color: var(--xp-dark-muted); }
+
+/* Overlay */
+.xp-scrim {
+  position: fixed; inset: 0; z-index: 90;
+  background: var(--xp-scrim);
+  opacity: 0; visibility: hidden; cursor: pointer;
+  transition: opacity var(--xp-dur) var(--xp-ease), visibility 0s linear var(--xp-dur);
+}
+
+/* Panel */
+.xp-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 100;
+  width: var(--xp-width);
+  display: flex; flex-direction: column;
+  padding: calc(18px + env(safe-area-inset-top, 0px)) 20px calc(28px + env(safe-area-inset-bottom, 0px));
+  background: var(--xp-dark); color: var(--xp-dark-fg);
+  transform: translateX(100%); opacity: 0; visibility: hidden;
+  transition:
+    transform var(--xp-dur) var(--xp-ease),
+    opacity var(--xp-dur) ease,
+    visibility 0s linear var(--xp-dur);
+}
+.xp-panel-head { display: flex; justify-content: flex-end; margin-bottom: 36px; }
+.xp-label {
+  font: 11px/1 var(--xp-sans); letter-spacing: .2em;
+  text-transform: uppercase; color: var(--xp-tan); margin-bottom: 10px;
+}
+.xp-panel ul { list-style: none; margin: 0; padding: 0; }
+.xp-panel nav a {
+  display: block; padding: 14px 0;
+  border-bottom: 1px solid var(--xp-dark-rule);
+  font-family: var(--xp-serif); font-size: 24px;
+  color: var(--xp-dark-fg); text-decoration: none;
+  transition: color .2s;
+}
+.xp-panel nav a:hover,
+.xp-panel nav a[aria-current="page"] { color: var(--xp-tan); }
+.xp-panel-foot { margin-top: auto; display: grid; gap: 14px; }
+.xp-cta {
+  display: block; text-align: center; padding: 15px 8px;
+  background: var(--xp-paper); color: var(--xp-ink); text-decoration: none;
+  font: 600 11px/1 var(--xp-sans); letter-spacing: .16em; text-transform: uppercase;
+}
+.xp-panel-foot small { font: 11px/1.5 var(--xp-sans); color: var(--xp-dark-muted); }
+
+/* Open state */
+.xp-nav-open .xp-scrim {
+  opacity: 1; visibility: visible;
+  transition: opacity var(--xp-dur) var(--xp-ease);
+}
+.xp-nav-open .xp-panel {
+  transform: none; opacity: 1; visibility: visible;
+  transition: transform var(--xp-dur) var(--xp-ease), opacity var(--xp-dur) ease;
+}
+body.xp-nav-open { overflow: hidden; }
+
+/* Focus + motion */
+.xp-menu-btn:focus-visible,
+.xp-close-btn:focus-visible,
+.xp-panel a:focus-visible { outline: 1px solid var(--xp-tan); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .xp-scrim, .xp-panel { transition-duration: .01ms !important; }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  :root { --xp-width: min(40vw, 520px); }
+  .xp-header { padding: 24px 48px; }
+  .xp-wordmark { font-size: 20px; }
+  .xp-menu-btn { font-size: 12px; }
+  .xp-panel { padding: 32px 56px 48px; }
+  .xp-panel-head { margin-bottom: 64px; }
+  .xp-panel nav a { font-size: 36px; padding: 20px 0; }
+  .xp-cta { padding: 18px 12px; font-size: 12px; }
+}

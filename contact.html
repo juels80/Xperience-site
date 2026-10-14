@@ -5,23 +5,35 @@
 <title>Contact — Xperience</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="wordmark" href="index.html">Xperience</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav aria-label="Primary" id="primary-nav">
-      <ul>
-        <li><a href="portfolio.html">Work</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="xp-header">
+  <a class="xp-wordmark" href="index.html">Xperience</a>
+  <button class="xp-menu-btn" id="xpMenuBtn" type="button" aria-expanded="false" aria-controls="xpMenu">Menu</button>
 </header>
+
+<div class="xp-scrim" id="xpScrim" aria-hidden="true"></div>
+<aside class="xp-panel" id="xpMenu" aria-label="Site menu">
+  <div class="xp-panel-head">
+    <button class="xp-close-btn" id="xpCloseBtn" type="button">Close</button>
+  </div>
+  <div class="xp-label">Menu</div>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="xp-panel-foot">
+    <a class="xp-cta" href="contact.html">Start a Project</a>
+    <small>christopher@xperiencestudio.org &middot; South Carolina</small>
+  </div>
+</aside>
 
 <main>
   <section class="contact-grid wrap">
@@ -31,25 +43,30 @@
       <p class="intro-text">Every project starts with a conversation, not a form. Tell us a bit about what you have in mind, and we'll follow up to schedule an intro call.</p>
       <div class="alt">
         Prefer to talk first?
-        <a href="#">Book an Intro Call</a>
+        <a href="mailto:christopher@xperiencestudio.org?subject=Intro%20Call">Book an Intro Call</a>
       </div>
     </div>
 
-    <form id="contact-form">
+    <form id="contact-form" action="https://formspree.io/f/xbglnewz" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New project inquiry — Xperience">
       <div class="row2">
         <div class="field">
           <label for="name">Name</label>
-          <input id="name" type="text" name="name" required>
+          <input id="name" type="text" name="name" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="company">Company (optional)</label>
-          <input id="company" type="text" name="company">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" autocomplete="email" required>
         </div>
+      </div>
+      <div class="field">
+        <label for="company">Company (optional)</label>
+        <input id="company" type="text" name="company" autocomplete="organization">
       </div>
       <div class="row2">
         <div class="field">
           <label for="type">Project Type</label>
-          <select id="type" name="type">
+          <select id="type" name="project_type">
             <option>New site</option>
             <option>Redesign</option>
             <option>Ongoing care</option>
@@ -74,8 +91,11 @@
         <label for="details">Tell us about your project</label>
         <textarea id="details" name="details" required></textarea>
       </div>
+      <div class="field">
+        <label for="upload">Attach a file (optional)</label>
+        <input id="upload" type="file" name="upload">
+      </div>
       <button class="submit" type="submit">Send Inquiry</button>
-      <p id="form-status" class="form-status" role="status"></p>
     </form>
   </section>
 </main>
@@ -87,7 +107,9 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/mobile-nav.js" defer></script>
 </body>
 </html>

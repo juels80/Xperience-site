@@ -6,23 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Xperience is a web design studio for high-end clients who don't compromise.">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/mobile-nav.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="wordmark" href="index.html">Xperience</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav aria-label="Primary" id="primary-nav">
-      <ul>
-        <li><a href="portfolio.html">Work</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="xp-header">
+  <a class="xp-wordmark" href="index.html">Xperience</a>
+  <button class="xp-menu-btn" id="xpMenuBtn" type="button" aria-expanded="false" aria-controls="xpMenu">Menu</button>
 </header>
+
+<div class="xp-scrim" id="xpScrim" aria-hidden="true"></div>
+<aside class="xp-panel" id="xpMenu" aria-label="Site menu">
+  <div class="xp-panel-head">
+    <button class="xp-close-btn" id="xpCloseBtn" type="button">Close</button>
+  </div>
+  <div class="xp-label">Menu</div>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="xp-panel-foot">
+    <a class="xp-cta" href="contact.html">Start a Project</a>
+    <small>christopher@xperiencestudio.org &middot; South Carolina</small>
+  </div>
+</aside>
 
 <main>
   <section class="hero">
@@ -83,7 +95,7 @@
             <h3>Range Rover Evoque</h3>
           </div>
         </a>
-        <a class="card" href="portfolio.html">
+        <a class="card" href="https://avl-one.vercel.app/">
           <div class="panel p2"><img class="project-image" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=85" alt="Smartphone showing a travel app interface" loading="lazy"><span>Hospitality</span></div>
           <div class="meta">
             <div class="cat">Concept Project</div>
@@ -125,5 +137,6 @@
 
 <script src="js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/mobile-nav.js" defer></script>
 </body>
 </html>
