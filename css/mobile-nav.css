@@ -3,11 +3,11 @@
    Slide + fade over --xp-dur, 35% dark overlay behind the panel. */
 
 :root {
-  --xp-paper: #f3f1ec;
-  --xp-ink: #1c1b19;
-  --xp-rule: #dcd8cf;
+  --xp-paper: var(--ground, #f6f4f0);
+  --xp-ink: var(--ink, #1a1a18);
+  --xp-rule: var(--line, #ddd8cf);
   --xp-tan: #a3885a;
-  --xp-link: #5b7fae;
+  --xp-link: var(--accent, #8a6d3b);
   --xp-dark: #1f1e1c;
   --xp-dark-fg: #f3f1ec;
   --xp-dark-muted: #9b968c;
