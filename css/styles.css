@@ -123,6 +123,7 @@ img{ max-width:100%; display:block; }
 .p2{ background-color:#d8d2c4; }
 .p3{ background-color:#e2e6e2; }
 .p4{ background-color:#ded6c8; }
+.p5{ background-color:#0b0e14; background-image:radial-gradient(circle at 30% 40%,rgba(255,179,64,0.55) 0 6px,transparent 7px),radial-gradient(circle at 62% 58%,rgba(255,92,138,0.5) 0 10px,transparent 11px),radial-gradient(circle at 74% 30%,rgba(111,91,240,0.55) 0 5px,transparent 6px),radial-gradient(circle at 50% 50%,#26314a 0,#0b0e14 75%); }
 
 /* ---------- Full case studies (portfolio page) ---------- */
 .cases{ padding-block:60px 120px; }
